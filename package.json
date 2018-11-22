@@ -1,0 +1,38 @@
+{
+  "name": "brazilian-barcode",
+  "version": "0.0.2",
+  "description": "Brazilian Barcode (Boleto) lib",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && npm run concat && npm run minimize",
+    "clean:node": "rm -r node_modules/",
+    "clean": "rm -r src/*",
+    "concat": "browserify -s brazilian-barcode index.js -o ./src/brazilian-barcode.js",
+    "minimize": "uglifyjs --compress --mangle --output ./src/brazilian-barcode.min.js -- ./src/brazilian-barcode.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guercione/brazilian-barcode.git"
+  },
+  "keywords": [
+    "Barcode",
+    "Boleto",
+    "Brazil",
+    "Brazilian",
+    "Banco",
+    "iof5",
+    "Code",
+    "128"
+  ],
+  "author": "Guilherme Guercione (https://github.com/Guercione)",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bugs": {
+    "url": "https://github.com/Guercione/brazilian-barcode/issues"
+  },
+  "homepage": "https://github.com/Guercione/brazilian-barcode#readme",
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "uglify-js": "^3.4.9"
+  }
+}
